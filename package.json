@@ -1,0 +1,63 @@
+{
+  "name": "svelte-electron-app",
+  "description": "blabla",
+  "author": "Michael Lucht <micha-lmxt@gradientdescent.de>",
+  "email": "micha-lmxt@gradientdescent.de",
+  "homepage": "https://gradientdescent.de/svelte-electron-starter",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "validate": "svelte-check",
+    "start": "electron .",
+    "start-browser": "sirv web/public",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^2.4.6",
+    "@capacitor/core": "^2.4.6",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1",
+    "electron-reload": "^1.5.0",
+    "path": "^0.12.7",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "@capacitor/android": "^2.4.6",
+    "fs-extra": "^9.1.0",
+    "sirv-cli": "^1.0.0"
+  },
+  "build": {
+    "files": [
+      "electron/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "none",
+      "owner": "micha-lmxt"
+    },
+    "linux": {
+      "category": "your.app.category.type",
+      "target": "deb",
+      "icon": "public/favicon-big.png"
+    }
+  }
+}

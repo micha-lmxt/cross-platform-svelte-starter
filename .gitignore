@@ -1,0 +1,12 @@
+/node_modules/
+/public/build/
+/electron/
+/capacitor/
+/browser/
+/android/
+/dist/
+/web/
+/.vscode/
+.DS_Store
+
+out/

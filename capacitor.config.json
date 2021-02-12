@@ -1,0 +1,14 @@
+{
+  "appId": "com.sveltecapacitor.app",
+  "appName": "svelte-capacitor-app",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "capacitor/public",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "linuxAndroidStudioPath": "/home/michael/Android/android-studio/bin/studio.sh"
+}
