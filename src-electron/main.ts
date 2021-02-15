@@ -8,6 +8,11 @@ require('electron-reload')(
     path.join(__dirname,'../public/**/*'));
 //END
 
+// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+if (require('electron-squirrel-startup')) {
+	// eslint-disable-line global-require
+	app.quit()
+}
 
 const image = nativeImage.createFromPath(
   app.getAppPath() + "/public/favicon-big.png"

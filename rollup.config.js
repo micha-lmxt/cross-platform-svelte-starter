@@ -34,17 +34,23 @@ function serve() {
 }
 
 const crossPlatformPlugin = (production, type) => ({
-	name: "remove-dev-code",
+	name: "cross-platform-plugin",
 	transform: (code,id) => {
 		if (production) {
+			// remove dev code from the src-electron/main.ts
 			code = code.replace(/\/\/IFDEV[\w\W]+?\/\/END/g, "");
 		}
 
 		if (type!==""){
+			// set the runtimetype in src/main.ts
 			code = code.replace("~~~platform~~~",type);
-			
+
+
+			// 
 			if (["electron","web","capacitor"].filter(v=>v!==type).find(v=>id.endsWith(v+"Adapter.ts"))){
-				return "export default undefined;"
+
+				return `// code was removed by cross-platfrom-plugin 
+						export default undefined;`
 			}
 		}
 

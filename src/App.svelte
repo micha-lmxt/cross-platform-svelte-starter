@@ -12,6 +12,7 @@
 	}[] = [];
 
 	let file = "";
+
 	function handleFiles(files: Blob[]) {
 		if (files.length === 0) {
 			return;
@@ -66,7 +67,7 @@
 
 	<div>
 		{#each images as image}
-			<img src={image.content} style="width:200px;height:200px;" alt={image.filename}/>
+			<img src={image.content} style="height:200px;" alt={image.filename}/>
 		{/each}
 	</div>
 	
